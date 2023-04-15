@@ -35,7 +35,6 @@ const Home = () => {
 
   return (
     <>
-      <button onClick={fetchUsers}>Search</button>
       <div style={styles.container}>
         {users.map(user => (
           <UserCard user={user} />
