@@ -17,33 +17,35 @@ const UserCard = (props) => {
             overflowWrap: 'break-word',
 
             color: theme.PRYMARY,
-            fontSize: '1.8em',
+            fontSize: (props.isDesktop) ? '1.2em' : '1.8em',
             fontWeight: '600'
         },
+
         cardContent: {
             display: 'flex',
             flexDirection: 'column',
 
-            minWidth: '90vw',
-            maxWidth: '90vw',
-            margin: '2vh 8vw',
-            padding: '2vh 2vw',
+            minWidth: (props.isDesktop) ? '250px':'90vw',
+            maxWidth: (props.isDesktop) ? '250px' : '90vw',
+            margin: (props.isDesktop) ? '0 0 12px 0' : '2vh 8vw',
+            padding: (props.isDesktop) ? '10px' : '2vh 2vw',
             borderRadius: '30px',
 
             backgroundColor: theme.CARDBACKGROUND,
             overflowWrap: 'break-word',
         },
         avatar: {
-            width: '20vw',
-            height: '10vh',
+            width: (props.isDesktop) ? '60px' : '20vw',
+            height: (props.isDesktop) ? '60px' : '10vh',
             borderRadius: '50%',
-            marginRight: '4vw',
+            marginRight: (props.isDesktop) ? '12px': '4vw',
         },
+
         keyField: {
             color: theme.PRYMARY,
             fontWeight: '700'
         },
-    };
+    }
 
     return (
         <div style={styles.cardContent} key={props.user.email}>

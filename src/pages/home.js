@@ -8,7 +8,16 @@ const Home = () => {
   const [users, setUsers] = useState([])
   const [page, setPage] = useState(1)
   const [isLoading, setIsLoading] = useState(false)
+  const [matches, setMatches] = useState(window.matchMedia("(min-width: 768px)").matches);
 
+  useEffect(() => {
+    const handler = e => setMatches(e.matches);
+    window.matchMedia("(min-width: 900px)").addEventListener('change', handler);
+
+    return () => {
+      window.matchMedia("(min-width: 900px)").removeEventListener('change', handler);
+    };
+  }, [])
 
   const fetchUsers = () => {
     fetch(`${baseUrl}?results=20`)
@@ -63,17 +72,17 @@ const Home = () => {
       maxWidth: '80vw',
       margin: '0 auto',
 
-      fontSize: '1.5em',
+      fontSize: (matches) ? '0.9em' : '1.5em',
       backgroundColor: theme.BACKGROUND,
       color: theme.TEXT,
     },
   }
-
+  
   return (
     <>
       <div style={styles.container}>
         {users.map(user => (
-          <UserCard user={user} />
+          <UserCard isDesktop={matches} user={user} />
         ))}
       </div>
     </>
