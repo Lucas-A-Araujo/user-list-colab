@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import UserCard from '../components/user-card';
+import theme from '../theme'
+
+
 
 const Home = () => {
   const [users, setUsers] = useState([]);
@@ -10,6 +13,7 @@ const Home = () => {
       .then(data => setUsers(data.results));
   }
 
+
   const styles = {
     container: {
       display: 'flex',
@@ -18,6 +22,10 @@ const Home = () => {
       width: '100%',
       maxWidth: '80vw',
       margin: '0 auto',
+
+      fontSize: '1.5em',
+      backgroundColor: theme.BACKGROUND,
+      color: theme.TEXT,
     },
   };
 
