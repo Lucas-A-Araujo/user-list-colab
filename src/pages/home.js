@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserCard from '../components/user-card';
 import theme from '../theme'
 
@@ -12,6 +12,10 @@ const Home = () => {
       .then(response => response.json())
       .then(data => setUsers(data.results));
   }
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
 
 
   const styles = {
