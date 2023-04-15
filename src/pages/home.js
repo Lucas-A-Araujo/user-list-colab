@@ -1,21 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import UserCard from '../components/user-card';
+import React, { useState, useEffect } from 'react'
+import UserCard from '../components/user-card'
 import theme from '../theme'
 
-
+const baseUrl = 'https://randomuser.me/api/'
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([])
+  const [page, setPage] = useState(1)
+  const [isLoading, setIsLoading] = useState(false)
+
 
   const fetchUsers = () => {
-    fetch(`https://randomuser.me/api/?results=20`)
+    fetch(`${baseUrl}?results=20`)
       .then(response => response.json())
-      .then(data => setUsers(data.results));
+      .then(data => setUsers(data.results))
+  }
+
+  const handleContentLoad = () => {
+    if (!isLoading) {
+      setIsLoading(true)
+
+      fetch(`${baseUrl}?results=20&page=${page}`)
+        .then(response => response.json())
+        .then(data => {
+          setUsers(currentContent => [...currentContent, ...data.results])
+          setIsLoading(false)
+          setPage(currentPage => currentPage + 1)
+        })
+    }
+  }
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight &&
+      !isLoading
+    ) {
+      handleContentLoad()
+    }
   }
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    fetchUsers()
+  }, [])
+
+  useEffect(() => {
+
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isLoading])
 
 
   const styles = {
@@ -31,7 +67,7 @@ const Home = () => {
       backgroundColor: theme.BACKGROUND,
       color: theme.TEXT,
     },
-  };
+  }
 
   return (
     <>
