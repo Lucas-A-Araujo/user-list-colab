@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import theme from '../../theme'
 
 const UserCard = (props) => {
-    const [showInfo, setShowInfo] = useState(false);
+    const [showInfo, setShowInfo] = useState(props.isDesktop || false);
 
     const handleShowInfo = () => {
-        setShowInfo(!showInfo);
+        setShowInfo(props.isDesktop || !showInfo);
       }
 
     const styles = {
@@ -25,8 +25,8 @@ const UserCard = (props) => {
             display: 'flex',
             flexDirection: 'column',
 
-            minWidth: (props.isDesktop) ? '250px':'90vw',
-            maxWidth: (props.isDesktop) ? '250px' : '90vw',
+            minWidth: (props.isDesktop) ? '400px':'90vw',
+            maxWidth: (props.isDesktop) ? '400px' : '90vw',
             margin: (props.isDesktop) ? '0 0 12px 0' : '2vh 8vw',
             padding: (props.isDesktop) ? '10px' : '2vh 2vw',
             borderRadius: '30px',
@@ -60,11 +60,11 @@ const UserCard = (props) => {
             </div>
             </button>
             {showInfo && (<div>
-                <p>personal info</p>
+                <p>Personal info</p>
                 <p>
                     <span style={styles.keyField}>Name:</span> {props.user.name.first} {props.user.name.last}<br />
-                    <span style={styles.keyField}>E-mail:</span> {props.user.email}<br />
                     <span style={styles.keyField}>Age:</span> {props.user.dob.age}<br />
+                    <span style={styles.keyField}>E-mail:</span> {props.user.email}<br />
                     <span style={styles.keyField}>Phone:</span> {props.user.phone}<br />
                     <span style={styles.keyField}>Cell:</span> {props.user.cell}
                 </p>
