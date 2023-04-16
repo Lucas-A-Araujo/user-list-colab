@@ -26,7 +26,7 @@ Este é um projeto de listar usuários. O foco maior foi na lógica e funcionali
 
 <br/>
 <h2>Conclusão</h2>
-	&emsp;&emsp;Eu sou suspeito para falar, pois eu gosto de desafios de projeto, mas eu gostei do desafio em si. O único ponto que eu não gostei da proposta foi a falta de um prazo, então eu me dei um prazo de “um sábado" para fazer esse projeto(eu tive um imprevisto no sábado, por isso peguei um pedaço do domingo para fazer alguns retoques).<br/>
+	&emsp;&emsp;Eu sou suspeito para falar, pois eu gosto de desafios de projeto, mas eu gostei do desafio em si. O único ponto que eu não gostei da proposta foi a falta de um prazo, então eu me dei um prazo de “um sábado" para fazer esse projeto(eu tive um imprevisto no sábado, por isso peguei um pedaço do domingo para fazer alguns retoques), porém é provável que eu faça mais alterações no próximo final de semana.<br/>
 	&emsp;&emsp;Em relação a parte técnica, eu decidi ficar nas minhas ferramentas antigas(react com programação funcional), pois eu não queria deixá-las enferrujadas já que eu não trabalho com elas no meu dia a dia. A API foi interessante, mas fiquei decepcionado por não ter muitos filtros.<br/>
 	&emsp;&emsp;Um ponto mais pessoal que percebi, é que eu estou bem enferrujado para criar uma UI bonita do zero, então eu deixei de lado nesse projeto e irei trabalhar isso em mim.
 
