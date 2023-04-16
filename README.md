@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+<h1>Lógica</h1>
+Este é um projeto de listar usuários. O foco maior foi na lógica e funcionalidades que eu achei que eram relevantes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br/>
+<h2>Parte 1 - Como fazer?</h2>
+	&emsp;&emsp;Primeiro de tudo, eu precisava saber o que mostrar e como mostrar, então fiz uma requisição no insomnia para identificar o que deveria ser mostrado e se existia uma forma fácil de requisitar vários usuários de uma vez.<br/>
+	&emsp;&emsp;Por fim, peguei o conjunto de tecnologias que eu estava familiarizado e que não daria muito trabalho desnecessário e assim implementei uma requisição e mostrei o resultado na tela para garantir que estava tudo certo.
 
-## Available Scripts
+<br/>
+<h2>Parte 2 - O que mostrar e o que esconder?</h2>
+	&emsp;&emsp;Eu verifiquei todas as informações que a API retornava e pensei em que contexto elas poderiam se encaixar e após isso quais dados não deveriam ser mostrados? Com as informações que eu tinha, achei melhor que fosse uma aplicação mais voltada para a administração de usuários, assim, todas as informações seriam relevantes, tirando a senha, pois é uma informação que apenas o usuário deveria ter acesso.
 
-In the project directory, you can run:
+<br/>
+<h2>Parte 3 - Não está tudo muito poluído?</h2>
+	&emsp;&emsp;Após mostrar todas as informações que eu achei necessário, eu percebi que estava tudo muito poluído, principalmente em telas de celular. Se fez necessário uma forma de mostrar as informações completas apenas quando requisitado, portanto o “card” do usuário foi diminuído e transformado em um botão que ao ser clicado iria mostrar mais informações do usuário em questão.<br/>
+	&emsp;&emsp;Com esse problema resolvido, surgiu um menor: “o que mostrar no card menor?”. De início eu tentei o nome, mas partindo do ponto de que o “username” é algo mais único e é a forma que o usuário seria mais conhecido na plataforma, eu optei por mostrar o username.
 
-### `npm start`
+<br/>
+<h2>Parte 4 - Quantos usuários mostrar?</h2>
+	&emsp;&emsp;A quantidade de usuários que eu poderia mostrar até agora era limitada, pois ou eu mostrava uma quantidade limitada e fixa de usuários(não é o ideal) ou eu mostraria todos os usuários possíveis de uma vez(não é viável), então optei pelo “scroll infinito” e com isso eu poderia mostrar uma quantidade de usuários sob demanda de uma forma performática.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
+<h2>Bônus - Estilos</h2>
+	&emsp;&emsp;Eu não foquei muito na beleza do site, me foquei mais em deixar tudo de uma forma confortável para se trabalhar e é por isso que a aplicação está em “dark mode”. Em relação ao roxo, a ideia original era usar o roxo da Colab, mas ele não tinha muito contraste com o modo escuro, então peguei um roxo um pouco mais claro.<br/>
+	&emsp;&emsp;A aplicação foi desenvolvida usando mobile first, por isso alguns commits ficam muito estranhos/feios fora do celular. Como o site tem bem mais espaço que um celular, decidi sempre mostrar as informações completas do usuário, pensei em tentar deixar mais bonito, mas creio que já tinha investido tempo de mais no estilo de um desafio de lógica.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br/>
+<h2>Futuros desafios</h2>
+<ul>
+<li>Encontrar uma forma de usar o espaço em branco da tela no desktop.</li>
+<li>Adicionar filtros para a aplicação(só achei filtro por gênero e nacionalidade, mas eu queria mais).</li>
+<li>Adicionar uma barra de pesquisa para a tela.(localmente)</li>
+</ul>
